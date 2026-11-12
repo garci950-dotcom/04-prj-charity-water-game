@@ -7,7 +7,7 @@
     <title>Campus Water Week</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="game.js" defer></script>
   </head>
@@ -33,10 +33,20 @@
             <h1 id="page-title">One week.<br><span>Make it count.</span></h1>
             <p class="intro-copy">Build a campus movement for clean water. Rally your people, use your resources wisely, and see how far one week can go.</p>
           </div>
-          <div class="heading-stamp" aria-hidden="true">
-            <span class="stamp-top">ONE CAMPUS</span>
-            <span class="stamp-number">07</span>
-            <span class="stamp-bottom">DAYS TO MAKE WAVES</span>
+          <div class="heading-tools">
+            <label class="difficulty-picker" for="difficulty-select">
+              <span>CAMPAIGN DIFFICULTY</span>
+              <select id="difficulty-select">
+                <option value="easy">Easy (140-point goal)</option>
+                <option value="normal" selected>Normal (200-point goal)</option>
+                <option value="hard">Hard (260-point goal)</option>
+              </select>
+            </label>
+            <div class="heading-stamp" aria-hidden="true">
+              <span class="stamp-top">ONE CAMPUS</span>
+              <span class="stamp-number">07</span>
+              <span class="stamp-bottom">DAYS TO MAKE WAVES</span>
+            </div>
           </div>
         </section>
 
@@ -90,6 +100,8 @@
               </div>
               <p class="score-number" id="score-number">000</p>
               <p class="score-caption">points earned this run</p>
+              <div class="goal-meter" id="goal-progress" role="progressbar" aria-label="Progress toward campaign goal" aria-valuemin="0" aria-valuemax="200" aria-valuenow="0"><span id="goal-meter-fill"></span></div>
+              <p class="goal-caption" id="goal-caption">Normal goal: 200 points</p>
               <div class="score-divider"></div>
               <div class="stat-list">
                 <div class="stat-row">
@@ -154,6 +166,13 @@
           <button class="primary-button result-button" id="play-again" type="button"><span>Run it back</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
         </section>
       </div>
+      <footer class="site-footer">
+        <p>Want to support real-world clean-water projects?</p>
+        <nav aria-label="charity: water links">
+          <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Visit charity: water</a>
+          <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Make a donation</a>
+        </nav>
+      </footer>
     </div>
   </body>
 </html>

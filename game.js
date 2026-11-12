@@ -5,6 +5,17 @@
   const MAX_HOURS = 3;
   const MAX_BUDGET_DISPLAY = 20;
   const STORAGE_KEY = "campus-water-week-save-v1";
+  const difficulties = {
+    easy: { label: "Easy", goal: 140 },
+    normal: { label: "Normal", goal: 200 },
+    hard: { label: "Hard", goal: 260 }
+  };
+  const milestones = [
+    { points: 25, message: "25 points! Your campaign is taking shape." },
+    { points: 75, message: "75 points! Your campus is paying attention." },
+    { points: 150, message: "150 points! You're making a real splash." },
+    { points: 220, message: "220 points! Major campaign milestone!" }
+  ];
 
   const actions = [
     { id: "peer-push", title: "Peer-to-peer push", description: "Give friends a simple way to bring friends.", type: "community", tag: "community", hours: 1, budget: 0, reach: 3, signups: 2, trust: 1, icon: "people" },
@@ -79,6 +90,11 @@
     campaignNumber: document.getElementById("campaign-number"),
     toast: document.getElementById("toast"),
     resultModal: document.getElementById("result-modal"),
+    difficultySelect: document.getElementById("difficulty-select"),
+    goalProgress: document.getElementById("goal-progress"),
+    goalMeterFill: document.getElementById("goal-meter-fill"),
+    goalCaption: document.getElementById("goal-caption"),
+    resultTitle: document.getElementById("result-title"),
     resultCopy: document.getElementById("result-copy"),
     finalScore: document.getElementById("final-score"),
     resultStats: document.getElementById("result-stats")
@@ -86,6 +102,7 @@
 
   let save = readSave();
   let campaignCount = save.campaignCount + 1;
+  let difficulty = "normal";
   let state;
   let toastTimer;
 
@@ -139,6 +156,8 @@
       currentEvent: dailyEvents[0],
       dailyEvents,
       dayActions: [],
+      milestonesReached: [],
+      lastMilestone: null,
       completed: false
     };
     if (connectorBonus) state.score = 8;
@@ -210,7 +229,12 @@
   }
 
   function renderStats() {
+    const goal = difficulties[difficulty].goal;
     dom.score.textContent = String(state.score).padStart(3, "0");
+    dom.goalCaption.textContent = `${difficulties[difficulty].label} goal: ${goal} points`;
+    dom.goalProgress.setAttribute("aria-valuemax", goal);
+    dom.goalProgress.setAttribute("aria-valuenow", Math.min(state.score, goal));
+    dom.goalMeterFill.style.width = `${Math.min((state.score / goal) * 100, 100)}%`;
     dom.reach.textContent = state.reach;
     dom.signups.textContent = state.signups;
     dom.trust.textContent = state.trust;
@@ -232,6 +256,8 @@
     dom.dayHeading.innerHTML = state.completed ? "Week <span>/ complete</span>" : `Day ${state.day} <span>/ 7</span>`;
     dom.weekStatus.textContent = state.completed ? "A week of people-powered momentum." : state.day === 1 ? "A fresh start. Find your first win." : state.day < 4 ? "Momentum is building. Keep showing up." : "The week is flying. Make the next move count.";
     dom.commitButton.disabled = !state.selected || state.completed;
+    dom.difficultySelect.value = difficulty;
+    dom.difficultySelect.disabled = state.day > 1 && !state.completed;
     dom.commitLabel.textContent = state.day === MAX_DAYS ? "Wrap the campaign" : "Lock in today’s move";
     dom.turnHint.textContent = state.selected ? selectionHint() : "Choose an action to see what it costs.";
   }
@@ -263,8 +289,14 @@
     const action = state.dayActions.find((item) => item.id === state.selected);
     if (!action || !canAfford(action)) return;
 
+    state.lastMilestone = null;
     const cost = getCosts(action);
     const gains = actionGains(action);
+    const playedCard = Array.from(dom.actionGrid.querySelectorAll("[data-action]"))
+      .find((button) => button.dataset.action === action.id);
+    playedCard?.remove();
+    state.dayActions = state.dayActions.filter((item) => item.id !== action.id);
+    state.selected = null;
     const backfired = action.risk && Math.random() < action.risk.chance;
     state.hours -= cost.hours;
     const budgetAfterCost = Math.max(0, state.budget - cost.budget + (state.currentEvent.budgetBonus || 0));
@@ -284,12 +316,18 @@
       state.trust += gains.trust;
     }
     state.score = Math.max(0, state.reach + state.signups * 6 + state.trust * 4 + (MAX_HOURS - state.hours) * 2 + state.day * 3);
+    const newMilestones = milestones.filter((milestone) =>
+      state.score >= milestone.points && !state.milestonesReached.includes(milestone.points)
+    );
+    state.milestonesReached.push(...newMilestones.map((milestone) => milestone.points));
+    state.lastMilestone = newMilestones.length ? newMilestones[newMilestones.length - 1].message : null;
 
     const eventLine = state.currentEvent.budgetBonus ? ` The alum match adds ${state.currentEvent.budgetBonus} budget.` : "";
     const outcomeLine = backfired
       ? `${action.title} backfired: lost ${formatRiskLosses(Object.fromEntries(Object.entries(losses).filter(([, amount]) => amount > 0)))}. Its potential gains were lost.`
       : `${action.title}: +${gains.reach} reach, +${gains.signups} sign-ups, +${gains.trust} trust.`;
-    showToast(`${outcomeLine}${eventLine}`);
+    showToast(`${outcomeLine}${eventLine}${state.lastMilestone ? ` ${state.lastMilestone}` : ""}`);
+    if (state.lastMilestone) playSound("milestone");
 
     if (state.day === MAX_DAYS) {
       finishCampaign();
@@ -314,10 +352,14 @@
   }
 
   function openResults(newBest) {
-    dom.resultCopy.textContent = newBest ? "That’s your best campaign yet. Your crew showed up, and your legacy unlocked new support for the next run." : "Your campus campaign is in the books. Every run teaches you a new way to bring people together.";
+    const goal = difficulties[difficulty].goal;
+    const goalReached = state.score >= goal;
+    dom.resultTitle.textContent = goalReached ? "Goal reached. You made waves." : "The week is wrapped.";
+    dom.resultCopy.textContent = `You scored ${state.score} points against the ${difficulty} goal of ${goal}.${goalReached ? " You reached your campaign goal." : ` You needed ${goal - state.score} more points to reach it.`}${state.lastMilestone ? ` ${state.lastMilestone}` : ""}${newBest ? " You set a new personal best." : " Your best campaign score is saved for next time."}`;
     dom.finalScore.textContent = state.score;
     dom.resultStats.innerHTML = `<div class="result-stat"><strong>${state.reach}</strong><span>people reached</span></div><div class="result-stat"><strong>${state.signups}</strong><span>new sign-ups</span></div><div class="result-stat"><strong>${state.trust}</strong><span>campus trust</span></div>`;
     dom.resultModal.hidden = false;
+    if (goalReached) playSound("win");
     document.getElementById("play-again").focus();
   }
 
@@ -332,7 +374,56 @@
     toastTimer = window.setTimeout(() => dom.toast.classList.remove("visible"), 2800);
   }
 
+  let audioContext;
+  function playSound(type) {
+    const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextConstructor) return;
+
+    audioContext = audioContext || new AudioContextConstructor();
+    const scheduleSound = () => {
+      const frequencies = type === "win"
+        ? [523.25, 659.25, 783.99]
+        : type === "milestone" ? [587.33, 783.99] : [659.25];
+      const duration = type === "click" ? 0.08 : 0.16;
+      frequencies.forEach((frequency, index) => {
+        const start = audioContext.currentTime + index * 0.1;
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = "sine";
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(type === "click" ? 0.045 : 0.09, start + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+        oscillator.start(start);
+        oscillator.stop(start + duration);
+      });
+    };
+
+    if (audioContext.state === "suspended") {
+      audioContext.resume().then(scheduleSound).catch((error) => {
+        console.error("Audio playback could not start.", error);
+      });
+    } else {
+      scheduleSound();
+    }
+  }
+
   document.getElementById("commit-button").addEventListener("click", commitAction);
+  document.addEventListener("click", (event) => {
+    const button = event.target instanceof Element ? event.target.closest("button") : null;
+    const winSoundWillPlay = button?.id === "commit-button"
+      && state.completed
+      && state.score >= difficulties[difficulty].goal;
+    if (button && !winSoundWillPlay) {
+      playSound("click");
+    }
+  });
+  dom.difficultySelect.addEventListener("change", () => {
+    difficulty = dom.difficultySelect.value;
+    newCampaign();
+  });
   document.getElementById("restart-button").addEventListener("click", newCampaign);
   document.getElementById("play-again").addEventListener("click", newCampaign);
   document.getElementById("close-modal").addEventListener("click", closeResults);
