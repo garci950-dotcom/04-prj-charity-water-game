@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f0e7">
+    <title>Campus Water Week</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Campus Water Week home">
+          <span class="mark" aria-hidden="true"><span></span></span>
+          <span>campus<span class="wordmark-light">waterweek</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="season-label"><span class="season-dot"></span> STUDENT CAMPAIGN SIM</span>
+          <button class="icon-button" id="restart-button" type="button" aria-label="Start a new campaign" title="Start a new campaign">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4.8 9a7.5 7.5 0 0 1 12.8-2L20 12M4 17v-5h5m10.2 3a7.5 7.5 0 0 1-12.8 2L4 12"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="campaign-heading" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow"><span id="campaign-number">CAMPAIGN 01</span><span class="eyebrow-line"></span><span>YOUR CAMPUS, YOUR MOVE</span></p>
+            <h1 id="page-title">One week.<br><span>Make it count.</span></h1>
+            <p class="intro-copy">Build a campus movement for clean water. Rally your people, use your resources wisely, and see how far one week can go.</p>
+          </div>
+          <div class="heading-stamp" aria-hidden="true">
+            <span class="stamp-top">ONE CAMPUS</span>
+            <span class="stamp-number">07</span>
+            <span class="stamp-bottom">DAYS TO MAKE WAVES</span>
+          </div>
+        </section>
+
+        <section class="game-layout" aria-label="Campaign game">
+          <div class="main-column">
+            <section class="week-panel" aria-label="Campaign progress">
+              <div class="week-topline">
+                <div>
+                  <p class="section-kicker">THE CAMPAIGN</p>
+                  <h2 id="day-heading">Day 1 <span>/ 7</span></h2>
+                </div>
+                <p class="week-status" id="week-status">A fresh start. Find your first win.</p>
+              </div>
+              <ol class="day-track" id="day-track" aria-label="Days in the campaign"></ol>
+            </section>
+
+            <section class="briefing-row" aria-label="Today's campus event">
+              <div class="briefing-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42 1.42M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg></div>
+              <div class="briefing-copy">
+                <p class="section-kicker">CAMPUS BRIEFING <span id="event-tag">TODAY</span></p>
+                <h3 id="event-title">Welcome Week is buzzing</h3>
+                <p id="event-description">Students are looking for their people. Make it easy to join in.</p>
+              </div>
+              <div class="event-effect" id="event-effect">+ sign-ups for club actions</div>
+            </section>
+
+            <div class="action-heading">
+              <div>
+                <p class="section-kicker">PICK YOUR PLAY</p>
+                <h2>What’s the move?</h2>
+              </div>
+              <span class="one-action"><span class="one-action-dot"></span> ONE ACTION TODAY</span>
+            </div>
+
+            <div class="action-grid" id="action-grid" role="group" aria-label="Choose a campaign action"></div>
+
+            <div class="turn-footer">
+              <p class="turn-hint" id="turn-hint">Choose an action to see what it costs.</p>
+              <button class="primary-button" id="commit-button" type="button" disabled>
+                <span id="commit-label">Lock in today’s move</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <aside class="side-column" aria-label="Campaign stats">
+            <section class="score-panel">
+              <div class="score-panel-top">
+                <p class="section-kicker">CAMPAIGN SCORE</p>
+                <span class="live-label"><span></span> LIVE</span>
+              </div>
+              <p class="score-number" id="score-number">000</p>
+              <p class="score-caption">points earned this run</p>
+              <div class="score-divider"></div>
+              <div class="stat-list">
+                <div class="stat-row">
+                  <span class="stat-icon reach-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0m-14 0a5 5 0 0 1 10 0m-6 0a1 1 0 1 1 2 0m-1 1v7"/></svg></span>
+                  <span class="stat-name">People reached</span>
+                  <strong id="reach-value">0</strong>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-icon signup-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m7-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-1h6m-3-3v6"/></svg></span>
+                  <span class="stat-name">New sign-ups</span>
+                  <strong id="signups-value">0</strong>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-icon trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Zm-3-11 2 2 4-4"/></svg></span>
+                  <span class="stat-name">Campus trust</span>
+                  <strong id="trust-value">0</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="resources-panel">
+              <div class="panel-heading">
+                <div><p class="section-kicker">IN YOUR CORNER</p><h2>Resources</h2></div>
+                <span class="resource-day" id="resource-day">DAY 1</span>
+              </div>
+              <div class="resource-item">
+                <div class="resource-label-row"><span>Volunteer hours</span><strong><span id="hours-value">3</span><small> / 3</small></strong></div>
+                <div class="meter"><span class="hours-meter" id="hours-meter"></span></div>
+                <p>Fresh energy each morning</p>
+              </div>
+              <div class="resource-item budget-item">
+                <div class="resource-label-row"><span>Campaign budget</span><strong><span id="budget-value">8</span><small> pts</small></strong></div>
+                <div class="meter"><span class="budget-meter" id="budget-meter"></span></div>
+                <p>Earn more with a match drive</p>
+              </div>
+            </section>
+
+            <section class="legacy-panel" id="legacy-panel">
+              <div class="legacy-header">
+                <span class="legacy-spark" aria-hidden="true">✳</span>
+                <div><p class="section-kicker">YOUR LEGACY</p><h2>Best run <span id="best-score">0</span></h2></div>
+              </div>
+              <div class="unlock-row" id="unlock-row"></div>
+            </section>
+
+            <p class="fine-print">Game scores are simulated campaign outcomes, not real-world donations or water projects.</p>
+          </aside>
+        </section>
+      </main>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+      <div class="modal-backdrop" id="result-modal" hidden>
+        <section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-title">
+          <button class="modal-close icon-button" id="close-modal" type="button" aria-label="Close results">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+          <p class="section-kicker">WEEK WRAPPED</p>
+          <h2 id="result-title">You made waves.</h2>
+          <p class="result-copy" id="result-copy"></p>
+          <div class="result-score"><span>FINAL CAMPAIGN SCORE</span><strong id="final-score">0</strong></div>
+          <div class="result-stats" id="result-stats"></div>
+          <button class="primary-button result-button" id="play-again" type="button"><span>Run it back</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

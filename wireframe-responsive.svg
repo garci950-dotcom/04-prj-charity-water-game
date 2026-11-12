@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1660" role="img" aria-labelledby="title description">
+  <title id="title">Campus Water Week tablet and mobile wireframes</title>
+  <desc id="description">Hand-sketched tablet and mobile game layouts showing how the seven-day campaign, action selection, live stats, resources, and finished-week results adapt to smaller screens.</desc>
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#c8c3b4"/></pattern>
+    <style>
+      text { font-family: "Comic Sans MS", "Segoe Print", cursive, sans-serif; fill: #26322d; }
+      .line { fill: none; stroke: #616a60; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .thin { fill: none; stroke: #a8aa9c; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+      .card { fill: #fffdf6; stroke: #73796f; stroke-width: 1.3; }
+      .screen { fill: #faf8ef; stroke: #616a60; stroke-width: 1.6; }
+      .tiny { font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+      .small { font-size: 12px; }
+      .body { font-size: 14px; }
+      .head { font-size: 21px; font-weight: 700; }
+      .muted { fill: #737b71; }
+      .green { fill: #286f59; }
+      .coral { fill: #bd6149; }
+      .softyellow { fill: #fff5d5; stroke: #c8b66d; stroke-width: 1.2; }
+      .button { fill: #f7da79; stroke: #746441; stroke-width: 1.4; }
+      .selected { fill: #f4f6eb; stroke: #286f59; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1600" height="1660" fill="#f4f0e4"/>
+  <rect width="1600" height="1660" fill="url(#dots)" opacity=".62"/>
+  <text x="58" y="53" font-size="28" font-weight="700">CAMPUS WATER WEEK</text>
+  <text x="58" y="79" class="small muted">RESPONSIVE WIREFRAMES  /  SAME CAMPAIGN, DIFFERENT SCREEN SIZES</text>
+  <path d="M57 96Q800 93 1544 97" class="thin"/>
+  <text x="62" y="133" class="head">Tablet</text>
+  <text x="147" y="133" class="small muted">≤ 900 px · compact two-column game · 2 action cards per row</text>
+  <text x="836" y="133" class="head">Mobile</text>
+  <text x="941" y="133" class="small muted">≤ 640 px · one-column game · thumb-friendly, vertical flow</text>
+
+  <!-- TABLET: complete play screen -->
+  <text x="62" y="168" class="tiny green">IN-PROGRESS GAME  /  LANDSCAPE OR NARROW DESKTOP</text>
+  <path d="M57 184Q414 182 805 185L804 861Q600 864 58 861Z" class="screen"/>
+  <path d="M58 246Q405 244 804 247" class="thin"/>
+  <path d="M78 209c-6-12 8-16 12-5 5-11 18-7 11 5l-11 10Z" fill="#f7da79" stroke="#616a60"/>
+  <path d="M89 202q-5 7 0 12 5-5 0-12" fill="#286f59"/>
+  <text x="113" y="213" class="small" font-weight="700">campus <tspan class="green">waterweek</tspan></text>
+  <text x="621" y="212" font-size="9" class="tiny muted">STUDENT CAMPAIGN SIM</text>
+  <circle cx="779" cy="207" r="13" class="line"/><path d="M785 205a7 7 0 0 0-11 2m-1 3v-4m0 0h4m-3 3a7 7 0 0 0 11-2" class="line"/>
+  <text x="750" y="231" font-size="8" class="muted">RESTART</text>
+
+  <text x="78" y="269" font-size="9" class="tiny green">CAMPAIGN 01  ─  YOUR CAMPUS, YOUR MOVE</text>
+  <text x="78" y="301" font-size="26" font-weight="700">One week. <tspan class="green">Make it count.</tspan></text>
+  <text x="78" y="321" class="small muted">Build a campus movement for clean water. Rally your people and make this week count.</text>
+  <path d="M720 267a30 30 0 1 0 1 0" class="thin"/>
+  <text x="720" y="264" text-anchor="middle" font-size="7" class="tiny green">ONE CAMPUS</text>
+  <text x="720" y="287" text-anchor="middle" font-size="20" font-weight="700" class="coral">07</text>
+
+  <path d="M77 339Q435 337 785 339L784 426Q432 428 78 426Z" class="card"/>
+  <text x="94" y="359" class="tiny muted">THE CAMPAIGN</text>
+  <text x="94" y="383" class="body" font-weight="700">Day 4 <tspan class="muted">/ 7</tspan></text>
+  <text x="475" y="381" class="small muted">Your club network is growing!</text>
+  <path d="M94 391Q434 389 768 392" class="thin"/>
+  <g text-anchor="middle" font-size="8" class="muted">
+    <circle cx="119" cy="406" r="8" fill="#286f59"/><circle cx="225" cy="406" r="8" fill="#286f59"/><circle cx="331" cy="406" r="8" fill="#286f59"/>
+    <circle cx="437" cy="406" r="9" fill="#286f59" stroke="#286f59"/><text x="437" y="409" fill="white">4</text>
+    <circle cx="543" cy="406" r="8" class="line"/><circle cx="649" cy="406" r="8" class="line"/><circle cx="755" cy="406" r="8" class="line"/>
+    <text x="119" y="423">1</text><text x="225" y="423">2</text><text x="331" y="423">3</text><text x="543" y="423">5</text><text x="649" y="423">6</text><text x="755" y="423">7</text>
+  </g>
+
+  <path d="M77 439Q436 437 785 439L784 498Q432 500 78 498Z" class="softyellow"/>
+  <circle cx="101" cy="465" r="14" fill="#f7da79" stroke="#746441"/>
+  <path d="M101 455v3m0 13v3m-10-10h3m14 0h3m-17-7 2 2m10 10 2 2m0-14-2 2m-10 10-2 2m5-5a4 4 0 1 1 8 0 4 4 0 0 1-8 0" class="line"/>
+  <text x="124" y="456" font-size="9" class="tiny">CAMPUS BRIEFING · TODAY</text>
+  <text x="124" y="477" class="small" font-weight="700">The quad is packed</text>
+  <text x="124" y="492" font-size="10" class="muted">+ reach for outdoor actions</text>
+
+  <text x="78" y="522" class="tiny muted">PICK YOUR PLAY · ONE ACTION TODAY</text>
+  <text x="78" y="545" class="body" font-weight="700">What’s the move?</text>
+  <path d="M78 557Q247 555 423 558L422 621Q245 623 78 620Z" class="selected"/>
+  <circle cx="97" cy="575" r="10" fill="#e6f1eb" stroke="#8c9d8b"/>
+  <text x="114" y="578" class="small" font-weight="700">Peer-to-peer push</text>
+  <text x="91" y="596" font-size="10" class="muted">1 hour · free · +3 reach</text>
+  <text x="91" y="612" font-size="9" class="green">+2 sign-ups · +1 trust</text>
+  <path d="M433 558Q603 555 784 558L783 621Q606 623 433 620Z" class="card"/>
+  <circle cx="452" cy="575" r="10" fill="#f7e9e1" stroke="#bd8c78"/>
+  <text x="469" y="578" class="small" font-weight="700">Dorm-floor challenge</text>
+  <text x="446" y="596" font-size="10" class="muted">1 hour · 1 budget</text>
+  <text x="446" y="612" font-size="9" class="green">+3 reach · +4 sign-ups</text>
+  <path d="M78 630Q247 628 423 631L422 694Q245 696 78 693Z" class="card"/>
+  <circle cx="97" cy="648" r="10" fill="#e5f0f1" stroke="#829fa2"/>
+  <text x="114" y="651" class="small" font-weight="700">Campus paper pitch</text>
+  <text x="91" y="669" font-size="10" class="muted">1 hour · free</text>
+  <text x="91" y="685" font-size="9" class="green">+6 reach · +2 trust</text>
+  <path d="M433 631Q603 628 784 631L783 694Q606 696 433 693Z" class="card"/>
+  <circle cx="452" cy="648" r="10" fill="#fff1c5" stroke="#b29b4a"/>
+  <text x="469" y="651" class="small" font-weight="700">Match drive</text>
+  <text x="446" y="669" font-size="10" class="muted">2 hours · earn +4 budget</text>
+  <text x="446" y="685" font-size="9" class="green">+2 reach · +3 sign-ups</text>
+  <text x="78" y="714" font-size="10" class="muted">More actions below — scroll to see all 14 available moves.</text>
+  <text x="78" y="736" font-size="10" class="green">Selected move · 1 volunteer hour · no budget cost</text>
+  <path d="M78 747Q425 745 785 748" class="thin"/>
+  <text x="78" y="771" font-size="10" class="muted">Choose a move, then confirm to spend today’s turn.</text>
+  <path d="M509 779Q647 777 784 779L783 814Q643 817 509 814Z" class="button"/>
+  <text x="646" y="802" text-anchor="middle" class="small" font-weight="700">Lock in today’s move →</text>
+  <path d="M78 828Q425 826 785 829" class="thin"/>
+  <text x="78" y="849" font-size="9" class="muted">A live confirmation reports the outcome; continue for Days 5–7.</text>
+
+  <!-- Tablet sidebar remains adjacent to action content -->
+  <path d="M77 875Q432 873 785 876" class="thin"/>
+  <text x="78" y="899" class="tiny green">TABLET SIDEBAR  /  STAYS BESIDE THE GAME</text>
+  <path d="M77 914Q253 912 428 915L427 1080Q250 1082 78 1079Z" fill="#17231f" stroke="#59635a" stroke-width="1.4"/>
+  <text x="95" y="939" font-size="9" class="tiny" fill="#c3d0c4">CAMPAIGN SCORE · LIVE</text>
+  <text x="95" y="982" font-size="38" font-weight="700" fill="#ffd447">048</text>
+  <text x="95" y="999" font-size="10" fill="#c3d0c4">points earned this run</text>
+  <path d="M95 1009Q254 1007 410 1009" stroke="#48584e"/>
+  <text x="95" y="1030" font-size="11" fill="#fffdf6">◎ Reach <tspan x="392" text-anchor="end" font-weight="700">22</tspan></text>
+  <text x="95" y="1050" font-size="11" fill="#fffdf6">♙ Sign-ups <tspan x="392" text-anchor="end" font-weight="700">11</tspan></text>
+  <text x="95" y="1070" font-size="11" fill="#fffdf6">◇ Campus trust <tspan x="392" text-anchor="end" font-weight="700">17</tspan></text>
+  <path d="M441 914Q612 912 785 915L784 997Q610 999 442 997Z" class="card"/>
+  <text x="458" y="937" class="tiny muted">IN YOUR CORNER · DAY 4</text>
+  <text x="458" y="958" class="small" font-weight="700">Volunteer hours  2 / 3</text>
+  <path d="M458 969h305" stroke="#e1e2d8" stroke-width="5" stroke-linecap="round"/><path d="M460 969h200" stroke="#286f59" stroke-width="5" stroke-linecap="round"/>
+  <text x="458" y="987" font-size="10" class="small">Budget  6 pts  ·  ███░░░░</text>
+  <path d="M441 1008Q612 1006 785 1009L784 1080Q610 1082 442 1079Z" class="card"/>
+  <text x="458" y="1032" class="tiny muted">✳ YOUR LEGACY · BEST RUN 064</text>
+  <text x="458" y="1054" font-size="10" class="green">✓ Campus Connector · +1 sign-up</text>
+  <text x="458" y="1071" font-size="10" class="muted">○ Seed Fund · unlock at 220 pts</text>
+
+  <!-- Tablet end state -->
+  <text x="62" y="1123" class="tiny coral">TABLET END-OF-WEEK STATE  /  RESULTS OVERLAY</text>
+  <path d="M57 1139Q413 1137 805 1140L804 1504Q411 1506 58 1503Z" fill="#e2ded3" stroke="#85887e" stroke-width="1.4"/>
+  <path d="M73 1156Q410 1154 787 1157L786 1487Q411 1489 74 1486Z" fill="#303a34" opacity=".27"/>
+  <path d="M162 1170Q165 1167 171 1168L701 1169Q708 1172 706 1179L705 1471Q702 1477 696 1475L168 1476Q162 1473 163 1467Z" fill="#fffdf6" stroke="#59635a" stroke-width="1.7"/>
+  <circle cx="678" cy="1190" r="12" class="line"/><path d="m674 1186 8 8m0-8-8 8" class="line"/>
+  <text x="191" y="1204" class="tiny green">WEEK WRAPPED</text>
+  <text x="191" y="1236" class="head">You made waves.</text>
+  <text x="191" y="1258" class="small muted">Your campus crew showed up. Here’s the seven-day result.</text>
+  <path d="M191 1272Q437 1270 677 1273" class="thin"/>
+  <text x="191" y="1296" class="tiny muted">FINAL CAMPAIGN SCORE</text>
+  <text x="674" y="1300" text-anchor="end" font-size="26" font-weight="700" class="green">126</text>
+  <path d="M191 1310Q437 1308 677 1311" class="thin"/>
+  <g text-anchor="middle">
+    <text x="252" y="1342" class="small muted">REACH</text><text x="252" y="1365" class="body green" font-weight="700">58</text>
+    <text x="434" y="1342" class="small muted">SIGN-UPS</text><text x="434" y="1365" class="body coral" font-weight="700">14</text>
+    <text x="616" y="1342" class="small muted">TRUST</text><text x="616" y="1365" class="body green" font-weight="700">20</text>
+  </g>
+  <text x="191" y="1392" class="small muted">Your best score is saved for your next run.</text>
+  <path d="M191 1411Q437 1409 677 1412L676 1451Q435 1453 191 1450Z" class="button"/>
+  <text x="434" y="1437" text-anchor="middle" class="body" font-weight="700">Run it back →</text>
+  <text x="191" y="1470" font-size="10" class="muted">Close ×  ·  replay starts a new campaign.</text>
+
+  <!-- MOBILE: vertical game, same action options -->
+  <text x="836" y="168" class="tiny green">IN-PROGRESS GAME  /  PORTRAIT PHONE</text>
+  <path d="M830 184Q1179 181 1544 185L1543 1110Q1180 1112 831 1109Z" class="screen"/>
+  <path d="M831 239Q1179 237 1543 240" class="thin"/>
+  <path d="M850 209c-6-12 8-16 12-5 5-11 18-7 11 5l-11 10Z" fill="#f7da79" stroke="#616a60"/>
+  <path d="M861 202q-5 7 0 12 5-5 0-12" fill="#286f59"/>
+  <text x="884" y="213" font-size="11" font-weight="700">campus <tspan class="green">waterweek</tspan></text>
+  <text x="1352" y="209" font-size="8" class="tiny muted">STUDENT CAMPAIGN</text>
+  <circle cx="1511" cy="207" r="12" class="line"/><path d="M1516 205a6 6 0 0 0-10 2m-1 3v-4m0 0h4m-3 3a6 6 0 0 0 10-2" class="line"/>
+  <text x="1481" y="230" font-size="7" class="muted">RESTART</text>
+
+  <text x="850" y="266" font-size="8" class="tiny green">CAMPAIGN 01  ─  YOUR CAMPUS, YOUR MOVE</text>
+  <text x="850" y="298" font-size="27" font-weight="700">One week.</text>
+  <text x="850" y="329" font-size="27" font-weight="700" class="green">Make it count.</text>
+  <text x="850" y="350" class="small muted">Build a campus movement for clean water.</text>
+  <text x="850" y="367" class="small muted">Rally your people and make this week count.</text>
+  <path d="M1480 275a25 25 0 1 0 1 0" class="thin"/>
+  <text x="1480" y="274" text-anchor="middle" font-size="7" class="tiny green">7 DAYS</text>
+  <text x="1480" y="294" text-anchor="middle" font-size="19" font-weight="700" class="coral">07</text>
+
+  <path d="M850 385Q1190 383 1524 386L1523 470Q1180 472 851 469Z" class="card"/>
+  <text x="866" y="405" class="tiny muted">THE CAMPAIGN</text>
+  <text x="866" y="428" class="body" font-weight="700">Day 4 <tspan class="muted">/ 7</tspan></text>
+  <text x="1340" y="426" font-size="10" class="muted">Club network growing!</text>
+  <path d="M866 437Q1181 435 1508 438" class="thin"/>
+  <g text-anchor="middle" font-size="8" class="muted">
+    <circle cx="885" cy="451" r="7" fill="#286f59"/><circle cx="984" cy="451" r="7" fill="#286f59"/><circle cx="1083" cy="451" r="7" fill="#286f59"/>
+    <circle cx="1182" cy="451" r="8" fill="#286f59"/><text x="1182" y="454" fill="white">4</text>
+    <circle cx="1281" cy="451" r="7" class="line"/><circle cx="1380" cy="451" r="7" class="line"/><circle cx="1479" cy="451" r="7" class="line"/>
+    <text x="885" y="467">1</text><text x="984" y="467">2</text><text x="1083" y="467">3</text><text x="1281" y="467">5</text><text x="1380" y="467">6</text><text x="1479" y="467">7</text>
+  </g>
+  <path d="M850 483Q1187 481 1524 484L1523 545Q1181 547 851 544Z" class="softyellow"/>
+  <circle cx="875" cy="508" r="13" fill="#f7da79" stroke="#746441"/>
+  <path d="M875 499v3m0 11v3m-9-9h3m12 0h3m-15-6 2 2m9 9 2 2m0-13-2 2m-9 9-2 2m4-4a4 4 0 1 1 8 0 4 4 0 0 1-8 0" class="line"/>
+  <text x="897" y="500" font-size="8" class="tiny">CAMPUS BRIEFING · TODAY</text>
+  <text x="897" y="520" class="small" font-weight="700">The quad is packed</text>
+  <text x="897" y="537" font-size="10" class="muted">+ reach for outdoor actions</text>
+
+  <text x="850" y="572" class="tiny muted">PICK YOUR PLAY</text>
+  <text x="850" y="595" class="body" font-weight="700">What’s the move?</text>
+  <text x="1420" y="590" font-size="8" class="tiny coral">● ONE ACTION</text>
+  <path d="M850 607Q1014 605 1183 608L1182 685Q1015 687 851 684Z" class="selected"/>
+  <circle cx="870" cy="628" r="10" fill="#e6f1eb" stroke="#8c9d8b"/>
+  <text x="887" y="630" font-size="11" font-weight="700">Peer-to-peer</text><text x="887" y="645" font-size="11" font-weight="700">push</text>
+  <text x="864" y="666" font-size="9" class="muted">1 hr · free · +3 reach</text><text x="864" y="680" font-size="8" class="green">+2 sign-ups · +1 trust</text>
+  <path d="M1192 608Q1358 605 1524 608L1523 685Q1357 687 1193 684Z" class="card"/>
+  <circle cx="1212" cy="628" r="10" fill="#f7e9e1" stroke="#bd8c78"/>
+  <text x="1229" y="630" font-size="11" font-weight="700">Dorm-floor</text><text x="1229" y="645" font-size="11" font-weight="700">challenge</text>
+  <text x="1206" y="666" font-size="9" class="muted">1 hr · 1 budget</text><text x="1206" y="680" font-size="8" class="green">+4 sign-ups · +3 reach</text>
+  <path d="M850 695Q1014 693 1183 696L1182 773Q1015 775 851 772Z" class="card"/>
+  <circle cx="870" cy="716" r="10" fill="#e5f0f1" stroke="#829fa2"/>
+  <text x="887" y="718" font-size="11" font-weight="700">Campus paper</text><text x="887" y="733" font-size="11" font-weight="700">pitch</text>
+  <text x="864" y="754" font-size="9" class="muted">1 hr · free</text><text x="864" y="768" font-size="8" class="green">+6 reach · +2 trust</text>
+  <path d="M1192 696Q1358 693 1524 696L1523 773Q1357 775 1193 772Z" class="card"/>
+  <circle cx="1212" cy="716" r="10" fill="#fff1c5" stroke="#b29b4a"/>
+  <text x="1229" y="718" font-size="11" font-weight="700">Match drive</text>
+  <text x="1206" y="741" font-size="9" class="muted">2 hours · earn +4 budget</text><text x="1206" y="759" font-size="8" class="green">+2 reach · +3 sign-ups</text>
+  <path d="M850 783Q1184 781 1524 784L1523 849Q1181 851 851 848Z" fill="#fff5ef" stroke="#bd8c78" stroke-width="1.3"/>
+  <circle cx="871" cy="805" r="10" fill="#f7e9e1" stroke="#bd8c78"/>
+  <text x="889" y="808" font-size="11" font-weight="700">Go-viral challenge  ·  HIGH RISK</text>
+  <text x="865" y="829" font-size="9" class="muted">2 hours · 2 budget · 40% backfire risk</text>
+  <text x="850" y="875" font-size="10" class="muted">Scrollable two-column choices; cards include cost, gains, and risk.</text>
+  <path d="M850 890Q1187 888 1524 891L1523 959Q1181 961 851 958Z" class="card"/>
+  <text x="868" y="913" font-size="10" class="green">SELECTED: Peer-to-peer push · 1 hour · 0 budget</text>
+  <text x="868" y="934" font-size="10" class="muted">Confirm to use today’s one campaign action.</text>
+  <path d="M868 940Q1190 938 1505 941L1504 965Q1187 967 868 964Z" class="button"/>
+  <text x="1186" y="957" text-anchor="middle" font-size="11" font-weight="700">Lock in today’s move →</text>
+  <text x="850" y="988" class="tiny green">STATS &amp; RESOURCES FOLLOW THE ACTIONS ON MOBILE</text>
+  <path d="M850 1001Q1187 999 1524 1002L1523 1053Q1181 1055 851 1052Z" fill="#17231f" stroke="#59635a" stroke-width="1.3"/>
+  <text x="866" y="1022" font-size="9" class="tiny" fill="#c3d0c4">CAMPAIGN SCORE · LIVE</text>
+  <text x="1505" y="1024" text-anchor="end" font-size="22" font-weight="700" fill="#ffd447">048</text>
+  <text x="866" y="1044" font-size="10" fill="#fffdf6">◎ Reach 22</text><text x="1058" y="1044" font-size="10" fill="#fffdf6">♙ Sign-ups 11</text><text x="1298" y="1044" font-size="10" fill="#fffdf6">◇ Trust 17</text>
+  <path d="M850 1063Q1187 1061 1524 1064L1523 1090Q1181 1092 851 1089Z" class="card"/>
+  <text x="866" y="1081" font-size="10" class="small">Hours 2/3  ▰▰░   ·   Budget 6 pts  ▰▰░░░</text>
+  <text x="1260" y="1081" font-size="9" class="green">Best 064 · Connector ✓</text>
+
+  <!-- Mobile end-of-week modal, phone-width representation -->
+  <text x="836" y="1140" class="tiny coral">MOBILE END-OF-WEEK STATE  /  COMPACT, SCROLL-SAFE DIALOG</text>
+  <path d="M830 1156Q1179 1154 1544 1157L1543 1580Q1180 1582 831 1579Z" fill="#e2ded3" stroke="#85887e" stroke-width="1.4"/>
+  <path d="M843 1170Q1178 1168 1530 1171L1529 1565Q1180 1567 844 1564Z" fill="#303a34" opacity=".27"/>
+  <path d="M930 1185Q934 1182 940 1183L1435 1184Q1442 1187 1440 1194L1439 1541Q1435 1547 1429 1545L936 1546Q930 1543 931 1537Z" fill="#fffdf6" stroke="#59635a" stroke-width="1.7"/>
+  <circle cx="1412" cy="1205" r="13" class="line"/><path d="m1408 1201 8 8m0-8-8 8" class="line"/>
+  <text x="961" y="1222" class="tiny green">WEEK WRAPPED</text>
+  <text x="961" y="1255" font-size="27" font-weight="700">You made waves.</text>
+  <text x="961" y="1278" font-size="12" class="muted">Your campus crew showed up. Here’s what</text>
+  <text x="961" y="1296" font-size="12" class="muted">you built together in seven days.</text>
+  <path d="M961 1311Q1190 1309 1410 1312" class="thin"/>
+  <text x="961" y="1334" font-size="9" class="tiny muted">FINAL CAMPAIGN SCORE</text>
+  <text x="1410" y="1338" text-anchor="end" font-size="27" font-weight="700" class="green">126</text>
+  <path d="M961 1350Q1190 1348 1410 1351" class="thin"/>
+  <g text-anchor="middle">
+    <text x="1019" y="1381" font-size="10" class="muted">REACH</text><text x="1019" y="1403" class="body green" font-weight="700">58</text>
+    <text x="1185" y="1381" font-size="10" class="muted">SIGN-UPS</text><text x="1185" y="1403" class="body coral" font-weight="700">14</text>
+    <text x="1351" y="1381" font-size="10" class="muted">TRUST</text><text x="1351" y="1403" class="body green" font-weight="700">20</text>
+  </g>
+  <text x="961" y="1430" font-size="11" class="muted">Best score saved for your next campaign.</text>
+  <path d="M961 1450Q1188 1448 1410 1451L1409 1493Q1186 1495 961 1492Z" class="button"/>
+  <text x="1185" y="1477" text-anchor="middle" class="body" font-weight="700">Run it back →</text>
+  <text x="961" y="1520" font-size="11" class="muted">Close ×  ·  play again to start a new run.</text>
+  <text x="58" y="1611" class="small muted">Both sizes retain all seven days, one action per day, resource costs, live feedback, a restart control, and the final score.</text>
+  <text x="58" y="1633" class="small muted">Tablet keeps score beside play; mobile stacks score after the actions, with resources and legacy directly beneath.</text>
+</svg>
